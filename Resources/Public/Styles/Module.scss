@@ -15,14 +15,81 @@ $relatedMargin: 8px;
 $tightMargin: 4px;
 $wideMargin: 32px;
 
+$dayCircleSize: 80px;
+
 .neos.neos-module.neos-module-management-history {
-    
+
+
+
+
+
     .popover-header {
         /*for neos history popup header*/
         background-color: #222 !important;
         color: white !important
     }
-    
+
+    .loadMore button {
+        border: 1px solid #006790;
+        color: white;
+        padding: 15px;
+        border-radius: 80px;
+
+
+
+        &:not([disabled]) {
+            background-color: #007fb2;
+
+            &:hover {
+                background-color: #006790;
+            }
+        }
+
+        &[disabled] {
+            background-color: transparent;
+            border: none;
+            cursor: default;
+
+            span {
+                display: none;
+            }
+
+            @keyframes spinner {
+                0% {
+                    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+                }
+
+                100% {
+                    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+                }
+            }
+
+            .spin::before {
+                animation: 1.5s linear infinite spinner;
+                animation-play-state: inherit;
+                border: solid 4px #cfd0d1;
+                border-bottom-color: #1c87c9;
+                border-radius: 50%;
+                content: "";
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                top: 22px;
+                transform: translate3d(-50%, -50%, 0);
+                will-change: transform;
+            }
+
+            .spin {
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+                position: relative;
+            }
+        }
+
+
+    }
+
     .neos-history {
         &::after {
             display: block;
@@ -39,7 +106,7 @@ $wideMargin: 32px;
             max-width: none;
         }
 
-        + p {
+        +p {
             width: 100%;
             margin-top: 20px;
             float: left;
@@ -47,6 +114,15 @@ $wideMargin: 32px;
     }
 
     .neos-history-day {
+        .neos-history-date {
+            // margin-bottom: $defaultMargin;
+
+            .neos-history-date-inner {
+                line-height: $dayCircleSize - 8;
+                margin-left: -(($dayCircleSize/2)-2);
+            }
+        }
+
         .neos-history-events {
             padding-top: $defaultMargin;
 
@@ -54,10 +130,11 @@ $wideMargin: 32px;
                 margin-bottom: $defaultMargin;
 
                 .neos-history-date-inner {
-                    line-height: $unit;
+                    vertical-align: middle;
+                    line-height: $unit - 8;
                     width: $unit;
                     height: $unit;
-                    margin-left: -(($unit / 2) + 2);
+                    margin-left: -(($unit/2)-2);
                     font-size: 12px;
                     background: $grayLight;
                 }
@@ -118,152 +195,97 @@ $wideMargin: 32px;
                 }
 
                 .neos-history-event-content {
-                    padding: $relatedMargin ($relatedMargin + $tightMargin);
+                    padding: $relatedMargin (
+                        $relatedMargin + $tightMargin
+                    );
+            }
+
+            .neos-history-sub-event {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .neos-history-sub-event+.neos-history-sub-event {
+                margin-top: $relatedMargin;
+            }
+
+            .neos-history-event-user {
+                border-radius: 50%;
+                width: $wideMargin;
+                height: $wideMargin;
+                margin-right: 0;
+                float: none;
+                border: none;
+                background: $blueDark;
+                overflow: hidden;
+                text-align: center;
+                line-height: $wideMargin;
+                font-size: 12px;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .neos-history-event-description {
+                padding: $tightMargin 0 $tightMargin $defaultMargin;
+                margin-right: 0;
+                line-height: 140%;
+
+                a {
+                    text-decoration: underline;
                 }
 
-                .neos-history-sub-event {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
+                .neos-history-event-details {
+                    cursor: pointer;
+                    user-select: none;
                 }
 
-                .neos-history-sub-event + .neos-history-sub-event {
-                    margin-top: $relatedMargin;
-                }
+                .neos-popover {
+                    width: 600px;
 
-                .neos-history-event-user {
-                    border-radius: 50%;
-                    width: $wideMargin;
-                    height: $wideMargin;
-                    margin-right: 0;
-                    float: none;
-                    border: none;
-                    background: $blueDark;
-                    overflow: hidden;
-                    text-align: center;
-                    line-height: $wideMargin;
-                    font-size: 12px;
-                    justify-content: center;
-                    flex-shrink: 0;
-                }
-
-                .neos-history-event-description {
-                    padding: $tightMargin 0 $tightMargin $defaultMargin;
-                    margin-right: 0;
-                    line-height: $defaultMargin;
-
-                    a {
-                        text-decoration: underline;
+                    .neos-popover-title i {
+                        vertical-align: top;
                     }
 
-                    .neos-history-event-details {
-                        cursor: pointer;
-                        user-select: none;
-                    }
+                    table {
+                        width: 100%;
 
-                    .neos-popover {
-                        width: 600px;
-
-                        .neos-popover-title i {
-                            vertical-align: top;
+                        th {
+                            text-align: center;
+                            font-weight: bold;
                         }
 
-                        table {
-                            width: 100%;
+                        td,
+                        th {
+                            height: auto;
+                            padding: $relatedMargin;
+                            line-height: 1;
 
-                            th {
-                                text-align: center;
-                                font-weight: bold;
+                            &:first-child {
+                                padding-left: 0 !important;
                             }
 
-                            td,
-                            th {
-                                height: auto;
-                                padding: $relatedMargin;
-                                line-height: 1;
+                            &:last-child {
+                                padding-right: 0 !important;
+                            }
 
-                                &:first-child {
-                                    padding-left: 0 !important;
-                                }
-
-                                &:last-child {
-                                    padding-right: 0 !important;
-                                }
-
-                                td {
-                                    width: 50%;
-                                    border: none;
-                                }
+                            td {
+                                width: 50%;
+                                border: none;
                             }
                         }
-
-                        ins, ins a {
-                            color: $green;
-                            text-decoration: none;
-                        }
-
-                        del, del a {
-                            color: $warning;
-                            text-decoration: none;
-                        }
                     }
-                }
-            }
-        }
-    }
 
-    .neos-history-day:nth-child(even) {
-        .neos-history-events {
-            &.neos-history-alignment {
-                .neos-history-date {
-                    margin-left: 100%;
-                }
-
-                .neos-history-event {
-                    margin-right: 10px;
-                }
-
-                .neos-history-event-arrow {
-                    top: 50%;
-                    right: -10px;
-                    margin-top: -10px;
-                    border-width: 10px 0 10px 10px;
-                    border-left-color: $grayMedium;
-
-                    &:after {
-                        border-width: 11px 0 11px 11px;
-                        border-left-color: $grayLight;
-                        bottom: -11px;
-                        right: -1px
+                    ins,
+                    ins a {
+                        color: $green;
+                        text-decoration: none;
                     }
-                }
-            }
-        }
-    }
 
-    .neos-history-day:nth-child(odd) {
-        .neos-history-events {
-            &.neos-history-alignment {
-                .neos-history-date {
-                    margin-left: -4px;
-                }
-
-                .neos-history-event {
-                    margin-left: 10px;
-                }
-
-                .neos-history-event-arrow {
-                    top: 50%;
-                    left: -10px;
-                    margin-top: -10px;
-                    border-width: 10px 10px 10px 0;
-                    border-right-color: $grayMedium;
-
-                    &:after {
-                        border-width: 11px 11px 11px 0;
-                        border-right-color: $grayLight;
-                        bottom: -11px;
-                        left: -1px;
+                    del,
+                    del a {
+                        color: $warning;
+                        text-decoration: none;
                     }
                 }
             }
@@ -271,3 +293,61 @@ $wideMargin: 32px;
     }
 }
 
+.neos-history-day:nth-child(even) {
+    .neos-history-events {
+        &.neos-history-alignment {
+            .neos-history-date {
+                margin-left: 100%;
+            }
+
+            .neos-history-event {
+                margin-right: 10px;
+            }
+
+            .neos-history-event-arrow {
+                top: 50%;
+                right: -10px;
+                margin-top: -10px;
+                border-width: 10px 0 10px 10px;
+                border-left-color: $grayMedium;
+
+                &:after {
+                    border-width: 11px 0 11px 11px;
+                    border-left-color: $grayLight;
+                    bottom: -11px;
+                    right: -1px
+                }
+            }
+        }
+    }
+}
+
+.neos-history-day:nth-child(odd) {
+    .neos-history-events {
+        &.neos-history-alignment {
+            .neos-history-date {
+                margin-left: -4px;
+            }
+
+            .neos-history-event {
+                margin-left: 10px;
+            }
+
+            .neos-history-event-arrow {
+                top: 50%;
+                left: -10px;
+                margin-top: -10px;
+                border-width: 10px 10px 10px 0;
+                border-right-color: $grayMedium;
+
+                &:after {
+                    border-width: 11px 11px 11px 0;
+                    border-right-color: $grayLight;
+                    bottom: -11px;
+                    left: -1px;
+                }
+            }
+        }
+    }
+}
+}

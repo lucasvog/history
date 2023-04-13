@@ -1,7 +1,353 @@
-{
-"version": 3,
-"mappings": "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",
-"sources": ["Module.scss"],
-"names": [],
-"file": "Module.css"
+/* Color palette */
+$grayDarker: #141414;
+$grayDark: #222;
+$grayMedium: #323232;
+$grayLight: #3f3f3f;
+$grayLighter: #eee;
+$blueDark: #007fb2;
+$green: #00a338;
+$warning: #ff460d;
+
+/* Sizes & margins */
+$unit: 40px;
+$defaultMargin: 16px;
+$relatedMargin: 8px;
+$tightMargin: 4px;
+$wideMargin: 32px;
+
+$dayCircleSize: 80px;
+
+.neos.neos-module.neos-module-management-history {
+
+
+
+
+
+    .popover-header {
+        /*for neos history popup header*/
+        background-color: #222 !important;
+        color: white !important
+    }
+
+    .loadMore button {
+        border: 1px solid #006790;
+        color: white;
+        padding: 15px;
+        border-radius: 80px;
+
+
+
+        &:not([disabled]) {
+            background-color: #007fb2;
+
+            &:hover {
+                background-color: #006790;
+            }
+        }
+
+        &[disabled] {
+            background-color: transparent;
+            border: none;
+            cursor: default;
+
+            span {
+                display: none;
+            }
+
+            @keyframes spinner {
+                0% {
+                    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+                }
+
+                100% {
+                    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+                }
+            }
+
+            .spin::before {
+                animation: 1.5s linear infinite spinner;
+                animation-play-state: inherit;
+                border: solid 4px #cfd0d1;
+                border-bottom-color: #1c87c9;
+                border-radius: 50%;
+                content: "";
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                top: 22px;
+                transform: translate3d(-50%, -50%, 0);
+                will-change: transform;
+            }
+
+            .spin {
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+                position: relative;
+            }
+        }
+
+
+    }
+
+    .neos-history {
+        &::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+    }
+
+    .neos-history-info {
+        float: left;
+
+        .neos-tooltip-inner {
+            white-space: nowrap;
+            max-width: none;
+        }
+
+        +p {
+            width: 100%;
+            margin-top: 20px;
+            float: left;
+        }
+    }
+
+    .neos-history-day {
+        .neos-history-date {
+            // margin-bottom: $defaultMargin;
+
+            .neos-history-date-inner {
+                line-height: $dayCircleSize - 8;
+                margin-left: -(($dayCircleSize/2)-2);
+            }
+        }
+
+        .neos-history-events {
+            padding-top: $defaultMargin;
+
+            .neos-history-date {
+                margin-bottom: $defaultMargin;
+
+                .neos-history-date-inner {
+                    vertical-align: middle;
+                    line-height: $unit - 8;
+                    width: $unit;
+                    height: $unit;
+                    margin-left: -(($unit/2)-2);
+                    font-size: 12px;
+                    background: $grayLight;
+                }
+            }
+
+            .neos-history-event {
+                padding-top: 0;
+                padding-right: 0;
+                margin-bottom: $defaultMargin;
+                background-color: $grayMedium;
+                -webkit-background-clip: padding-box;
+                -moz-background-clip: padding;
+                background-clip: padding-box;
+                border: 1px solid $grayLight;
+                box-shadow: none;
+
+                &::after {
+                    content: none;
+                }
+
+                .neos-history-event-arrow,
+                .neos-history-event-arrow:after {
+                    position: absolute;
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-color: transparent;
+                }
+
+                .neos-history-event-arrow:after {
+                    content: "";
+                    z-index: -1;
+                }
+
+                .neos-history-event-title {
+                    margin: 0; // reset heading margin
+                    padding: ($defaultMargin - 3) ($defaultMargin - $tightMargin);
+                    font-size: 14px;
+                    line-height: 14px;
+                    font-weight: bold;
+                    color: #fff;
+                    background-color: $grayDark;
+                    border-bottom: 1px solid $grayLight;
+
+                    &:empty {
+                        display: none;
+                    }
+
+                    .neos-tooltip-inner {
+                        white-space: nowrap;
+                        max-width: none;
+                    }
+
+                    .icon-external-link {
+                        float: right;
+                    }
+                }
+
+                .neos-history-event-content {
+                    padding: $relatedMargin (
+                        $relatedMargin + $tightMargin
+                    );
+            }
+
+            .neos-history-sub-event {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .neos-history-sub-event+.neos-history-sub-event {
+                margin-top: $relatedMargin;
+            }
+
+            .neos-history-event-user {
+                border-radius: 50%;
+                width: $wideMargin;
+                height: $wideMargin;
+                margin-right: 0;
+                float: none;
+                border: none;
+                background: $blueDark;
+                overflow: hidden;
+                text-align: center;
+                line-height: $wideMargin;
+                font-size: 12px;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .neos-history-event-description {
+                padding: $tightMargin 0 $tightMargin $defaultMargin;
+                margin-right: 0;
+                line-height: 140%;
+
+                a {
+                    text-decoration: underline;
+                }
+
+                .neos-history-event-details {
+                    cursor: pointer;
+                    user-select: none;
+                }
+
+                .neos-popover {
+                    width: 600px;
+
+                    .neos-popover-title i {
+                        vertical-align: top;
+                    }
+
+                    table {
+                        width: 100%;
+
+                        th {
+                            text-align: center;
+                            font-weight: bold;
+                        }
+
+                        td,
+                        th {
+                            height: auto;
+                            padding: $relatedMargin;
+                            line-height: 1;
+
+                            &:first-child {
+                                padding-left: 0 !important;
+                            }
+
+                            &:last-child {
+                                padding-right: 0 !important;
+                            }
+
+                            td {
+                                width: 50%;
+                                border: none;
+                            }
+                        }
+                    }
+
+                    ins,
+                    ins a {
+                        color: $green;
+                        text-decoration: none;
+                    }
+
+                    del,
+                    del a {
+                        color: $warning;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.neos-history-day:nth-child(even) {
+    .neos-history-events {
+        &.neos-history-alignment {
+            .neos-history-date {
+                margin-left: 100%;
+            }
+
+            .neos-history-event {
+                margin-right: 10px;
+            }
+
+            .neos-history-event-arrow {
+                top: 50%;
+                right: -10px;
+                margin-top: -10px;
+                border-width: 10px 0 10px 10px;
+                border-left-color: $grayMedium;
+
+                &:after {
+                    border-width: 11px 0 11px 11px;
+                    border-left-color: $grayLight;
+                    bottom: -11px;
+                    right: -1px
+                }
+            }
+        }
+    }
+}
+
+.neos-history-day:nth-child(odd) {
+    .neos-history-events {
+        &.neos-history-alignment {
+            .neos-history-date {
+                margin-left: -4px;
+            }
+
+            .neos-history-event {
+                margin-left: 10px;
+            }
+
+            .neos-history-event-arrow {
+                top: 50%;
+                left: -10px;
+                margin-top: -10px;
+                border-width: 10px 10px 10px 0;
+                border-right-color: $grayMedium;
+
+                &:after {
+                    border-width: 11px 11px 11px 0;
+                    border-right-color: $grayLight;
+                    bottom: -11px;
+                    left: -1px;
+                }
+            }
+        }
+    }
+}
 }
