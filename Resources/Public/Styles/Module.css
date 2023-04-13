@@ -234,3 +234,9 @@
   bottom: -11px;
   left: -1px;
 }
+
+.neos-module-management-history .popover-header {
+  /*for neos history popup header*/
+  background-color: #222 !important;
+  color: white !important
+}
